@@ -29,6 +29,32 @@ if st.button("Run AWS CLI Command"):
         intent_params = {
                 'intentId': 'W05NGSLJ6J',
                 'intentName': 'wheelchair',
+                "sampleUtterances": [
+                    {
+                        "utterance": "I need a wheelchair"
+                    },
+                    {
+                        "utterance": "I will need a wheelchair when I arrive at the airport for my departing flight. How do I get one?"
+                    },
+                    {
+                        "utterance": "who do I get a wheelchair"
+                    },
+                    {
+                        "utterance": "can you help me get a wheel chair"
+                    },
+                    {
+                        "utterance": "i need a wheelchair when I get to the airport"
+                    },
+                    {
+                        "utterance": "how do i get a wheelchair when I get to the airport"
+                    },
+                    {
+                        "utterance": "where can I get a wheelchair"
+                    },
+                    {
+                        "utterance": "how do I get a wheelchair"
+                    }
+                ],
                 'localeId': 'en_US',
                 'botId': '7LIOJYDHIB',
                 'botVersion': 'DRAFT',
@@ -49,6 +75,11 @@ if st.button("Run AWS CLI Command"):
             }
         # List objects in the specified S3 bucket
         objects = session.update_intent(**intent_params)
+        session.build_bot_locale(
+            botId='7LIOJYDHIB',
+            botVersion='DRAFT',
+            localeId='en_US'
+        )
 
         # Display the result
         st.subheader("Objects in S3 Bucket:")
