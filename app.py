@@ -11,12 +11,12 @@ aws_region = "us-east-1"
 st.title("Lex Intent Modifier")
 
 # Accept freeform text input
-user_input = st.text_area("Enter Intent Name:")
+user_input = st.text_area("Please Enter new Intent Response:")
 
 if st.button("Run AWS CLI Command"):
     # Validate input
     if not user_input:
-        st.error("Please enter an Intent Name.")
+        st.error("Please Enter new Intent Response.")
     else:
         # try:
             # Create an S3 client using boto3 with the loaded credentials
@@ -64,7 +64,7 @@ if st.button("Run AWS CLI Command"):
                             {
                                 'message': {
                                     'plainTextMessage': {
-                                        'value': 'Wheelchair service is provided through the airlines, passengers may reserve wheelchair service in advance by calling their airline or requesting it online via their airline’s website, it is also available on demand, with services confirmed to comply with ADA and ACAA requirements.'
+                                        'value': user_input
                                     }
                                 }
                             }
