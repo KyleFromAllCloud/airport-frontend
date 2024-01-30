@@ -71,7 +71,7 @@ if st.button("Run AWS CLI Command"):
                         }
                     }
                 ],
-                "allowInterrupt": true
+                "allowInterrupt": True
             },
             "failureResponse": {
                 "messageGroups": [
@@ -83,7 +83,7 @@ if st.button("Run AWS CLI Command"):
                         }
                     }
                 ],
-                "allowInterrupt": true
+                "allowInterrupt": True
             },
             "successNextStep": {
                 "dialogAction": {
@@ -104,7 +104,7 @@ if st.button("Run AWS CLI Command"):
                 "intent": {}
             }
         },
-        "active": true
+        "active": True
     },
     "slotPriorities": [
         {
@@ -124,14 +124,14 @@ if st.button("Run AWS CLI Command"):
                 }
             ],
             "maxRetries": 4,
-            "allowInterrupt": true,
+            "allowInterrupt": True,
             "messageSelectionStrategy": "Random",
             "promptAttemptsSpecification": {
                 "Initial": {
-                    "allowInterrupt": true,
+                    "allowInterrupt": True,
                     "allowedInputTypes": {
-                        "allowAudioInput": true,
-                        "allowDTMFInput": true
+                        "allowAudioInput": True,
+                        "allowDTMFInput": True
                     },
                     "audioAndDTMFInputSpecification": {
                         "startTimeoutMs": 4000,
@@ -151,10 +151,10 @@ if st.button("Run AWS CLI Command"):
                     }
                 },
                 "Retry1": {
-                    "allowInterrupt": true,
+                    "allowInterrupt": True,
                     "allowedInputTypes": {
-                        "allowAudioInput": true,
-                        "allowDTMFInput": true
+                        "allowAudioInput": True,
+                        "allowDTMFInput": True
                     },
                     "audioAndDTMFInputSpecification": {
                         "startTimeoutMs": 4000,
@@ -174,10 +174,10 @@ if st.button("Run AWS CLI Command"):
                     }
                 },
                 "Retry2": {
-                    "allowInterrupt": true,
+                    "allowInterrupt": True,
                     "allowedInputTypes": {
-                        "allowAudioInput": true,
-                        "allowDTMFInput": true
+                        "allowAudioInput": True,
+                        "allowDTMFInput": True
                     },
                     "audioAndDTMFInputSpecification": {
                         "startTimeoutMs": 4000,
@@ -197,10 +197,10 @@ if st.button("Run AWS CLI Command"):
                     }
                 },
                 "Retry3": {
-                    "allowInterrupt": true,
+                    "allowInterrupt": True,
                     "allowedInputTypes": {
-                        "allowAudioInput": true,
-                        "allowDTMFInput": true
+                        "allowAudioInput": True,
+                        "allowDTMFInput": True
                     },
                     "audioAndDTMFInputSpecification": {
                         "startTimeoutMs": 4000,
@@ -220,10 +220,10 @@ if st.button("Run AWS CLI Command"):
                     }
                 },
                 "Retry4": {
-                    "allowInterrupt": true,
+                    "allowInterrupt": True,
                     "allowedInputTypes": {
-                        "allowAudioInput": true,
-                        "allowDTMFInput": true
+                        "allowAudioInput": True,
+                        "allowDTMFInput": True
                     },
                     "audioAndDTMFInputSpecification": {
                         "startTimeoutMs": 4000,
@@ -254,9 +254,9 @@ if st.button("Run AWS CLI Command"):
                     }
                 }
             ],
-            "allowInterrupt": true
+            "allowInterrupt": True
         },
-        "active": true,
+        "active": True,
         "confirmationNextStep": {
             "dialogAction": {
                 "type": "FulfillIntent"
@@ -278,7 +278,7 @@ if st.button("Run AWS CLI Command"):
             }
         },
         "elicitationCodeHook": {
-            "enableCodeHookInvocation": true
+            "enableCodeHookInvocation": True
         }
     },
     "intentClosingSetting": {
@@ -292,9 +292,9 @@ if st.button("Run AWS CLI Command"):
                     }
                 }
             ],
-            "allowInterrupt": true
+            "allowInterrupt": True
         },
-        "active": true,
+        "active": True,
         "nextStep": {
             "dialogAction": {
                 "type": "EndConversation"
@@ -318,7 +318,7 @@ if st.button("Run AWS CLI Command"):
                     }
                 }
             ],
-            "allowInterrupt": true
+            "allowInterrupt": True
         },
         "nextStep": {
             "dialogAction": {
