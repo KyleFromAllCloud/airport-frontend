@@ -80,15 +80,15 @@ if st.button("Run AWS CLI Command"):
             }
         # List objects in the specified S3 bucket
         objects = session.update_intent(**intent_params)
-        session.build_bot_locale(
+        output = session.build_bot_locale(
             botId='7LIOJYDHIB',
             botVersion='DRAFT',
             localeId='en_US'
         )
 
         # Display the result
-        st.subheader("Objects in S3 Bucket:")
-        st.write(objects)
+        st.subheader("Logs:")
+        st.write(output)
             # else:
             #     st.write("No objects found in the specified bucket.")
 
