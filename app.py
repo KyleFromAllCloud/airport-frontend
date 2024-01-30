@@ -16,7 +16,7 @@ user_input_name = st.text_area("Please Enter The name of the Intent:")
 # Accept freeform text input
 user_input = st.text_area("Please Enter new Intent Response:")
 
-if st.button("Run AWS CLI Command"):
+if st.button("Run Command"):
     # Validate input
     if not user_input:
         st.error("Please Enter new Intent Response.")
@@ -90,8 +90,8 @@ if st.button("Run AWS CLI Command"):
         )
 
         # Display the result
-        st.subheader("Logs:")
-        st.write(output)
+        st.subheader("Output:")
+        st.write("Request Processed Successfully")
             # else:
             #     st.write("No objects found in the specified bucket.")
 
