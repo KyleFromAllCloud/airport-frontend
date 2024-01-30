@@ -26,29 +26,29 @@ if st.button("Run AWS CLI Command"):
             aws_secret_access_key=aws_secret_access_key,
             region_name=aws_region
         )
-
-        # List objects in the specified S3 bucket
-        objects = session.update_intent(
-    "intentId": "W05NGSLJ6J",
-    "intentName": "wheelchair",
-    "localeId": "en_US",
-    "botId": "7LIOJYDHIB",
-    "botVersion": "DRAFT",
-    "initialResponseSetting": {
-        "initialResponse": {
-            "messageGroups": [
-                {
-                    "message": {
-                        "plainTextMessage": {
-                            "value": "Wheelchair service is provided through the airlines, passengers may reserve wheelchair service in advance by calling their airline or requesting it online via their airline’s website, it is also available on demand, with services confirmed to comply with ADA and ACAA requirements."
-                        }
+        intent_params = {
+                'intentId': 'W05NGSLJ6J',
+                'intentName': 'wheelchair',
+                'localeId': 'en_US',
+                'botId': '7LIOJYDHIB',
+                'botVersion': 'DRAFT',
+                'initialResponseSetting': {
+                    'initialResponse': {
+                        'messageGroups': [
+                            {
+                                'message': {
+                                    'plainTextMessage': {
+                                        'value': 'Wheelchair service is provided through the airlines, passengers may reserve wheelchair service in advance by calling their airline or requesting it online via their airline’s website, it is also available on demand, with services confirmed to comply with ADA and ACAA requirements.'
+                                    }
+                                }
+                            }
+                        ],
+                        'allowInterrupt': True
                     }
                 }
-            ],
-            "allowInterrupt": true
-        }
-        }
-)
+            }
+        # List objects in the specified S3 bucket
+        objects = session.update_intent(**intent_params)
 
         # Display the result
         st.subheader("Objects in S3 Bucket:")
