@@ -42,5 +42,5 @@ if st.button("Run AWS CLI Command"):
             # else:
             #     st.write("No objects found in the specified bucket.")
 
-        except Exception as e:
-            st.error(f"An error occurred: {str(e)}")
+        # except Exception as e:
+        #     st.error(f"An error occurred: {str(e)}")
