@@ -70,6 +70,11 @@ if st.button("Run AWS CLI Command"):
                             }
                         ],
                         'allowInterrupt': True
+        },
+        "nextStep": {
+            "dialogAction": {
+                "type": "EndConversation"
+            }
                     }
                 }
             }
