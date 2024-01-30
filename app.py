@@ -1,36 +1,46 @@
 import streamlit as st
 import subprocess
+import boto3
 
 # AWS CLI configuration
-aws_profile = "your_aws_profile"
-aws_region = "your_aws_region"
+aws_access_key_id = st.secrets["aws_access_key_id"]
+aws_secret_access_key = st.secrets["aws_secret_access_key"]
+aws_region = "us-east-1"
 
 # Streamlit app
-st.title("AWS CLI Caller")
+st.title("Lex Intent Modifier")
 
 # Accept freeform text input
-user_input = st.text_area("Enter AWS CLI Command:")
+user_input = st.text_area("Enter Intent Name:")
 
 if st.button("Run AWS CLI Command"):
     # Validate input
     if not user_input:
-        st.error("Please enter an AWS CLI command.")
+        st.error("Please enter an Intent Name.")
     else:
         try:
-            # Run AWS CLI command
-            result = subprocess.run(
-                ["aws", "--profile", aws_profile, "--region", aws_region] + user_input.split(),
-                capture_output=True,
-                text=True,
+            # Create an S3 client using boto3 with the loaded credentials
+            session = boto3.client(
+                'lexv2-models',
+                aws_access_key_id=aws_access_key_id,
+                aws_secret_access_key=aws_secret_access_key,
+                region_name=aws_region
             )
 
-            # Display the result
-            st.subheader("AWS CLI Output:")
-            st.code(result.stdout)
+            # List objects in the specified S3 bucket
+            objects = session.list_intents(
+                botId='7LIOJYDHIB',
+                botVersion='DRAFT',
+                localeId='en_US'
+                )
 
-            # Display errors, if any
-            if result.stderr:
-                st.error(result.stderr)
+            # Display the result
+            st.subheader("Objects in S3 Bucket:")
+            if "Contents" in objects:
+                for obj in objects["Contents"]:
+                    st.write(obj["Key"])
+            else:
+                st.write("No objects found in the specified bucket.")
 
         except Exception as e:
             st.error(f"An error occurred: {str(e)}")
