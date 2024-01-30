@@ -59,7 +59,7 @@ if st.button("Run AWS CLI Command"):
         }
     ],
     "fulfillmentCodeHook": {
-        "enabled": false,
+        "enabled": False,
         "postFulfillmentStatusSpecification": {
             "successResponse": {
                 "messageGroups": [
@@ -328,8 +328,8 @@ if st.button("Run AWS CLI Command"):
             "intent": {}
         },
         "codeHook": {
-            "enableCodeHookInvocation": false,
-            "active": false,
+            "enableCodeHookInvocation": False,
+            "active": False,
             "postCodeHookSpecification": {
                 "successNextStep": {
                     "dialogAction": {
