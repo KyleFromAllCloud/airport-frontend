@@ -36,9 +36,7 @@ if st.button("Run AWS CLI Command"):
 
         # Display the result
         st.subheader("Objects in S3 Bucket:")
-        if "Contents" in objects:
-            for obj in objects["Contents"]:
-                st.write(obj["Key"])
+        st.write(objects)
             # else:
             #     st.write("No objects found in the specified bucket.")
 
