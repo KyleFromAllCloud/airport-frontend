@@ -11,6 +11,9 @@ aws_region = "us-east-1"
 st.title("Lex Intent Modifier")
 
 # Accept freeform text input
+user_input_name = st.text_area("Please Enter The name of the Intent:")
+
+# Accept freeform text input
 user_input = st.text_area("Please Enter new Intent Response:")
 
 if st.button("Run AWS CLI Command"):
@@ -28,7 +31,7 @@ if st.button("Run AWS CLI Command"):
         )
         intent_params = {
                 'intentId': 'W05NGSLJ6J',
-                'intentName': 'wheelchair',
+                'intentName': user_input_name,
                 "sampleUtterances": [
                     {
                         "utterance": "I need a wheelchair"
